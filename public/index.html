@@ -4,44 +4,30 @@
     <meta charset="UTF-8"/>
     <title>My Application</title>
     <link rel="stylesheet" href="./style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 </head>
 <body>
 
 <div class="wrapper">
     <div class="heading-container">
-        <h1>Movies App</h1>
+        <h1>The Ultimate Movies App</h1>
     </div>
     <div class="main-body-container">
         <ul class="movie-list">
-            <li class="single-movie">
-                <p class="movie-title"></p>
-                <p class="movie-rating"></p>
-                <p class="movie-id"></p>
-            </li>
-            <li class="single-movie">
-                <p class="movie-title"></p>
-                <p class="movie-rating"></p>
-                <p class="movie-id"></p>
-            </li>
-            <li class="single-movie">
-                <p class="movie-title"></p>
-                <p class="movie-rating"></p>
-                <p class="movie-id"></p>
-            </li>
-            <li class="single-movie">
-                <p class="movie-title"></p>
-                <p class="movie-rating"></p>
-                <p class="movie-id"></p>
-            </li>
-            <li class="single-movie">
-                <p class="movie-title"></p>
-                <p class="movie-rating"></p>
-                <p class="movie-id"></p>
-            </li>
+            <!--            <li class="single-movie">
+                            <p class="movie-title"></p>
+                            <p class="movie-rating"></p>
+                            <p class="movie-id"></p>
+                        </li>-->
         </ul>
     </div>
+    <div class="footer-container">
+        Footer
+    </div>
 </div>
-<div class="form-container">
+
+
+<div class="form-container" id="add-movie-form">
     <form>
         <label for="add-movie-title">Movie Title:</label>
         <input type="text" id="add-movie-title">
@@ -50,7 +36,9 @@
         <button type="button" id="add-button">Add</button>
     </form>
 </div>
-<div class="form-container edit-movie-wrapper">
+
+
+<div class="form-container" id="edit-movie-container">
     <form>
         <label for="movie-search">Search</label>
         <input type="search" id="movie-search" placeholder="type in movie title">
@@ -58,7 +46,7 @@
     </form>
     <div class="search-results-container">
         <ul class="search-results-list">
-<!--            <li class="search-result-item"></li>-->
+            <!--            <li class="search-result-item"></li>-->
         </ul>
     </div>
     <form>

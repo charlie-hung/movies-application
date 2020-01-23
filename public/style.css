@@ -1,10 +1,73 @@
-html, body {
-    height: 100%;
+:root {
+
 }
 
-.container {
-    position: relative;
-    top: 50%;
-    transform: translateY(-100%);
-    text-align: center;
+html, body {
+    height: 100vh;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: grid;
+    grid-template: 10% 70% 10% / 5% 90% 5%;
+    grid-template-areas:
+                    "header-area header-area header-area"
+                    ". body-area ."
+                    "footer-area footer-area footer-area";
+    grid-gap: .5rem;
+}
+
+.heading-container {
+    grid-area: header-area;
+}
+.main-body-container {
+    grid-area: body-area;
+    display: flex;
+    flex-wrap: wrap;
+    height: 30rem;
+    background-color: burlywood;
+    overflow: scroll;
+}
+.footer-container {
+    grid-area: footer-area;
+    /*will change height later*/
+    height: 10rem;
+}
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+
+}
+.single-movie-container {
+    display: flex;
+    margin: .5rem 1.5rem;
+    width: 25rem;
+    height: 10rem;
+    text-align: right;
+}
+.small-details-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70%;
+}
+.small-image-container {
+    width: 30%;
+}
+.movie-title, .movie-rating, .movie-id {
+    margin: .5rem;
+}
+.movie-title {
+    font-size: 1.8rem;
+}
+.fa-star {
+    color: gold;
+    filter: drop-shadow(3px 3px 2px #000);
+}
+

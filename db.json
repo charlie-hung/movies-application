@@ -11,7 +11,7 @@
       "id": 2
     },
     {
-      "title": "Charlie Isnt Missing Out",
+      "title": "Charlie Isnt Missing Out!",
       "rating": "1",
       "id": 4
     },
@@ -21,9 +21,14 @@
       "id": 5
     },
     {
-      "title": "Hung Ly: The Last of The Dragons 2",
+      "title": "Codeup takes on the world.",
       "rating": "4",
       "id": 6
+    },
+    {
+      "title": "I have no free time.",
+      "rating": "4",
+      "id": 7
     }
   ]
 }
