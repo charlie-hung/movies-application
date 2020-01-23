@@ -1,6 +1,7 @@
 {
     const $ = require('jquery');
-    const {selectedMovie, getMovies, createMovieString, addMovie, editMovie, deleteMovie, searchMovies, renderSearchResults, toggleDisable} = require('./api.js');
+    const { selectedMovie, getMovies, createMovieString, addMovie, editMovie, deleteMovie, searchMovies, renderSearchResults, toggleDisable } = require('./api.js');
+    const { getImdbMovie, getPoster } = require('./imdb.js')
 
     $(document).ready(() => {
         $('.movie-list').html('Loading...');
@@ -23,17 +24,20 @@
             searchMovies();
         });
 
-        $('#edit-button').click(()=> {
+        $('#edit-button').click(() => {
             editMovie();
         });
 
 
-        $('#delete-button').click(()=> {
-           deleteMovie();
+        $('#delete-button').click(() => {
+            deleteMovie();
         });
 
         $('#movie-search').keyup(() => {
             searchMovies();
         })
+
+        getImdbMovie('rush hour 2');
+        getPoster('121212nbhbgb');
     });
 }
