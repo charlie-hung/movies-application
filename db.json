@@ -6,19 +6,24 @@
       "id": 1
     },
     {
-      "title": "Star Wars: A New Hope",
+      "title": "Star Wars: A NEW New Hope",
       "rating": "5",
       "id": 2
     },
     {
-      "title": "test movie",
-      "rating": "3",
-      "id": 3
+      "title": "Charlie Isnt Missing Out",
+      "rating": "1",
+      "id": 4
     },
     {
-      "title": "charlie is missing out",
+      "title": "Hung Ly: The Last of The Dragons",
       "rating": "5",
-      "id": 4
+      "id": 5
+    },
+    {
+      "title": "Hung Ly: The Last of The Dragons 2",
+      "rating": "4",
+      "id": 6
     }
   ]
 }

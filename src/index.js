@@ -11,10 +11,6 @@
 
         getMovies().then((movies) => {
             console.log('Here are all the movies:');
-/*            movies.forEach((movie) => {
-                console.log(movie);
-                console.log(`id# ${movie.id} - ${movie.title} - rating: ${movie.rating}`);
-            });*/
             $('.movie-list').html(createMovieString(movies));
             Promise.resolve();
         }).catch((error) => {
@@ -48,7 +44,9 @@
                     },
                     body: JSON.stringify(movie)
                 }).then((data) => {
-                    // console.log("success", data.json());
+                    getMovies().then((movies) => {
+                        $('.movie-list').html(createMovieString(movies));
+                    });
                 })
             }
         };
@@ -70,10 +68,24 @@
             results.forEach((result)=> htmlString += `<li class="search-result-item" movie-id="${result.id}">${result.title}</li>`);
             $('.search-results-list').html(htmlString);
             $('.search-result-item').click(function () {
-                console.log("here");
-                console.log($(this));
-
+               selectedMovie.id = $(this).attr('movie-id');
+               $('#edit-movie-title').val($(this).html());
             });
+        };
+
+        let toggleDisable = () => {
+          $('#add-button').attr('disabled', (index, attr) => {
+              return attr === 'disabled' ? null : 'disabled';
+          });
+          $('#search-button').attr('disabled', (index, attr) => {
+              return attr === 'disabled' ? null : 'disabled';
+          });
+          $('#edit-button').attr('disabled', (index, attr) => {
+              return attr === 'disabled' ? null : 'disabled';
+          });
+          $('#delete-button').attr('disabled', (index, attr) => {
+              return attr === 'disabled' ? null : 'disabled';
+          });
         };
 
         //EVENT LISTENERS
@@ -89,22 +101,40 @@
 
         $('#edit-button').click(()=> {
             let movieChanges = {
-                title: 'hung is missing out',
-                rating: '5'
+                title: $('#edit-movie-title').val(),
+                rating: $('#edit-movie-rating').val()
             };
-            fetch(`/api/movies/${1}`, {
-                method: 'GET',
+            console.log(movieChanges);
+            fetch(`/api/movies/${selectedMovie.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(movieChanges)
+            }).then((data) => {
+                console.log(data.json());
+                getMovies().then((movies) => {
+                    $('.movie-list').html(createMovieString(movies));
+                });
+            });
+        });
+
+        $('#delete-button').click(()=> {
+            fetch(`/api/movies/${selectedMovie.id}`, {
+                method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
                 }
-                // body: JSON.stringify()
             }).then((data) => {
                 console.log(data.json());
-                // console.log("success", data.json());
+                getMovies().then((movies) => {
+                    $('.movie-list').html(createMovieString(movies));
+                });
             });
-
-
         });
 
+        $('#movie-search').keyup(() => {
+            searchMovies();
+        })
     });
 }
