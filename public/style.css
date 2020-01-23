@@ -41,31 +41,50 @@ html, body {
 .movie-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
     margin: 0 auto;
-
 }
 .single-movie-container {
     display: flex;
-    margin: .5rem 1.5rem;
-    width: 25rem;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem 1rem 1rem 1rem;
+    width: 22rem;
     height: 10rem;
-    text-align: right;
+    background-color: azure;
+    border-radius: .4rem;
+    text-align: left;
+    transition: .4s ease;
+}
+.single-movie-container:hover {
+    background-color: green;
+    color: white;
 }
 .small-details-container {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    width: 70%;
-}
-.small-image-container {
-    width: 30%;
+    justify-content: center;
+    align-items: flex-start;
+    /*flex-wrap: wrap;*/
+    text-align: left;
+    margin-left: 1rem;
 }
 .movie-title, .movie-rating, .movie-id {
     margin: .5rem;
 }
 .movie-title {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+    /*text-wrap: normal;*/
+    /*width: 70%;*/
 }
+.movie-img-small {
+    height: 150px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+
 .fa-star {
     color: gold;
     filter: drop-shadow(3px 3px 2px #000);

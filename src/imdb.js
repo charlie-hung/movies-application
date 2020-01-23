@@ -2,10 +2,11 @@ const $ = require('jquery');
 import movieKey from './keys.js';
 
 const getPoster = (searchString) => {
-  getImdbMovie(searchString).then((movie) => {
+  return getImdbMovie(searchString).then((movie) => {
     console.log(movie.poster);
+    return movie.poster;
   });
-}
+};
 
 const getImdbMovie = (searchString) => {
   let searchQuery = searchString.split(' ').join('%2520');
@@ -30,4 +31,4 @@ const getImdbMovie = (searchString) => {
 module.exports = {
   getImdbMovie,
   getPoster
-}
+};

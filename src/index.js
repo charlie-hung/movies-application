@@ -38,6 +38,7 @@
         })
 
         getImdbMovie('rush hour 2');
-        getPoster('121212nbhbgb');
+        // getPoster('121212nbhbgb');
+        // getPoster('rush hour 2');
     });
 }

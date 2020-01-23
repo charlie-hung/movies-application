@@ -1,4 +1,5 @@
 const $ = require('jquery');
+const {getImdbMovie, getPoster} = require('./imdb.js');
 
 // VARIABLE DECLARATIONS
 let selectedMovie = {
@@ -21,9 +22,9 @@ const createMovieString = (moviesObj) => {
                         <p class="movie-title">${movie.title}</p>
                         <p class="movie-rating">${generateStars(movie.rating)}</p>
                     </div>
-                    <div class="small-image-container">
-                        <img src="http://placeholder.pics/svg/100x150" alt="">
-                    </div>
+<!--                    <div class="small-image-container">-->
+                        <img class="movie-img-small" src="${movie.poster_url}" alt="">
+<!--                    </div>-->
                 </li>`
     });
     return htmlString;
@@ -31,7 +32,7 @@ const createMovieString = (moviesObj) => {
 
 const generateStars = (movieRating) => {
     let starString = "";
-    for (let i = 0; i < movieRating; i ++) {
+    for (let i = 0; i < movieRating; i++) {
         starString += '<i class="fas fa-star"></i>';
     }
     return starString;
@@ -40,21 +41,26 @@ const generateStars = (movieRating) => {
 const addMovie = () => {
     let addMovieTitleEl = $('#add-movie-title');
     if ($(addMovieTitleEl).val()) {
-        let movie = {
-            title: $(addMovieTitleEl).val(),
-            rating: $('#add-movie-rating').val()
-        };
-        fetch('/api/movies', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(movie)
-        }).then((data) => {
-            getMovies().then((movies) => {
-                $('.movie-list').html(createMovieString(movies));
-            });
-        })
+        getImdbMovie($(addMovieTitleEl).val()).then((movie)=> {
+            console.log(movie);
+            let movieObj = {
+                "title": movie.title.trim(),
+                "rating": $('#add-movie-rating').val(),
+                "imdb-id": movie.id,
+                "poster_url": movie.poster
+            };
+            fetch('/api/movies', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(movieObj)
+            }).then((data) => {
+                getMovies().then((movies) => {
+                    $('.movie-list').html(createMovieString(movies));
+                });
+            })
+        });
     }
 };
 

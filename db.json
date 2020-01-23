@@ -3,31 +3,43 @@
     {
       "title": "Casablanca",
       "rating": "4",
-      "id": 1
+      "id": 1,
+      "imdb-id": "tt0034583",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BY2IzZGY2YmEtYzljNS00NTM5LTgwMzUtMzM1NjQ4NGI0OTk0XkEyXkFqcGdeQXVyNDYyMDk5MTU@.jpg"
     },
     {
-      "title": "Star Wars: A NEW New Hope",
+      "title": "Star Wars: Episode IV - A New Hope",
       "rating": "5",
-      "id": 2
+      "id": 2,
+      "imdb-id": "tt0076759",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg"
     },
     {
-      "title": "Charlie Isnt Missing Out!",
-      "rating": "1",
+      "title": "Inception",
+      "rating": "5",
+      "imdb-id": "tt1375666",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@.jpg",
+      "id": 3
+    },
+    {
+      "title": "Rush Hour 2",
+      "rating": "4",
+      "imdb-id": "tt0266915",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BODhlNGJjMWQtZGMyYS00MzJhLWJhZGMtY2NlNDI5Nzg5NTU2XkEyXkFqcGdeQXVyNDk3NzU2MTQ@.jpg",
       "id": 4
     },
     {
-      "title": "Hung Ly: The Last of The Dragons",
-      "rating": "5",
-      "id": 5
-    },
-    {
-      "title": "Codeup takes on the world.",
+      "title": "Jumanji: Welcome to the Jungle",
       "rating": "4",
+      "imdb-id": "tt2283362",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BODQ0NDhjYWItYTMxZi00NTk2LWIzNDEtOWZiYWYxZjc2MTgxXkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg",
       "id": 6
     },
     {
-      "title": "I have no free time.",
-      "rating": "4",
+      "title": "The Human Centipede (First Sequence)",
+      "rating": "1",
+      "imdb-id": "tt1467304",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMTY4Nzk3NzYxOF5BMl5BanBnXkFtZTcwODQwNjQzMw@@.jpg",
       "id": 7
     }
   ]
