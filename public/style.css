@@ -20,6 +20,7 @@ html, body {
     grid-template: 15% 70% 5% / 5% 90% 5%;
     grid-template-areas: "header-area header-area header-area" ". body-area ." "footer-area footer-area footer-area";
     grid-gap: .5rem;
+    height: 100%;
 }
 
 .heading-container {
@@ -33,22 +34,41 @@ html, body {
     font-size: 3rem;
     filter: drop-shadow(3px 3px 2px #000);
     grid-area: header-area;
+    height: 15vh;
 }
 
 .main-body-container {
     grid-area: body-area;
     display: flex;
     flex-wrap: wrap;
-    height: 30rem;
     background-color: #1C2023;
     overflow: scroll;
     border-radius: .3rem;
+    height: 70vh;
 }
 
 .footer-container {
     grid-area: footer-area;
-    /*will change height later*/
-    height: 10rem;
+    height: 5vh;
+}
+
+.menu-sidebar-container {
+    position: absolute;
+    top: 10.5vh;
+    right: 6.5vw;
+    background-color: white;
+    border: .1em solid #111;
+    border-radius: .5em;
+    box-shadow: 0 0 10px #111;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    font-size: 1rem;
+    color: black;
+}
+
+.menu-close {
+    display: none;
 }
 
 .menu-links {
@@ -68,6 +88,11 @@ html, body {
     cursor: pointer;
 }
 
+.add-movie-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .movie-list {
     display: flex;
     flex-wrap: wrap;
@@ -79,7 +104,7 @@ html, body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 1rem auto 1rem 1rem;
+    margin: 1rem auto 1rem 2rem;
     width: 22rem;
     height: 10rem;
     background-color: #1C2023;
@@ -129,6 +154,7 @@ html, body {
     height: 20px;
     width: 20px;
     filter: drop-shadow(3px 3px 2px #444);
+    z-index: 0;
 }
 
 /* MENU ICON */
@@ -201,20 +227,6 @@ html, body {
     -moz-transform: rotate(-135deg);
     -o-transform: rotate(-135deg);
     transform: rotate(-135deg);
-}
-#menu-sidebar-container {
-    position: absolute;
-    top: 15vh;
-    right: 5.5vw;
-    background-color: white;
-    border: .1em solid #111;
-    border-radius: .5em;
-    box-shadow: 0 0 10px #111;
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    font-size: 1rem;
-    color: black;
 }
 #menu-search-label, #menu-search {
     font-size: 1.5rem;

@@ -13,6 +13,16 @@ const getMovies = () => {
         });
 };
 
+const displayAllMovies = () => {
+    getMovies().then((movies) => {
+        $('.movie-list').html(createMovieString(movies));
+        Promise.resolve().then(response => "Success: " + response);
+    }).catch((error) => {
+        alert('Oh no! Something went wrong.\nCheck the console for details.');
+        console.log(error);
+    });
+};
+
 /*-----Creates an 'li' string for each movie-----*/
 const createMovieString = (moviesObj) => {
     let htmlString = '';
@@ -98,7 +108,7 @@ const deleteMovie = () => {
     });
 };
 // SEARCH MOVIE FUNCTIONALITY //
-const searchMovies = () => {
+/*const searchMovies = () => {
     let searchResults = [];
     getMovies().then((movies) => {
         if ($('#movie-search').val()) {
@@ -108,9 +118,30 @@ const searchMovies = () => {
         }
         renderSearchResults(searchResults);
     })
+};*/
+
+const searchMovies = () => {
+    let searchResults = [];
+    getMovies().then((movies) => {
+        if ($('#menu-search').val()) {
+            movies.forEach((movie) => {
+                if (movie.title.toLowerCase().includes($('#menu-search').val().toLowerCase())) searchResults.push(movie);
+            });
+            renderSearchResults(searchResults);
+        }
+        else displayAllMovies();
+    })
 };
 
 const renderSearchResults = (results) => {
+    $('.movie-list').html(createMovieString(results));
+    // $('.search-result-item').click(function () {
+    //     selectedMovie.id = $(this).attr('movie-id');
+    //     $('#edit-movie-title').val($(this).html());
+    // });
+};
+
+/*const renderSearchResults = (results) => {
     let htmlString = "";
     results.forEach((result) => htmlString += `<li class="search-result-item" movie-id="${result.id}">${result.title}</li>`);
     $('.search-results-list').html(htmlString);
@@ -118,7 +149,7 @@ const renderSearchResults = (results) => {
         selectedMovie.id = $(this).attr('movie-id');
         $('#edit-movie-title').val($(this).html());
     });
-};
+};*/
 
 const toggleDisable = () => {
     $('#add-button').attr('disabled', (index, attr) => {
@@ -138,6 +169,7 @@ const toggleDisable = () => {
 module.exports = {
     selectedMovie,
     getMovies,
+    displayAllMovies,
     createMovieString,
     addMovie,
     editMovie,
