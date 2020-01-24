@@ -33,7 +33,7 @@ const createMovieString = (moviesObj) => {
 const generateStars = (movieRating) => {
     let starString = "";
     for (let i = 0; i < movieRating; i++) {
-        starString += '<i class="fas fa-star"></i>';
+        starString += `<img src="./popcorn.png" alt="" class="popcorn">`;
     }
     return starString;
 };

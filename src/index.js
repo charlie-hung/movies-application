@@ -35,7 +35,11 @@
 
         $('#movie-search').keyup(() => {
             searchMovies();
-        })
+        });
+
+        $('#menu-search').keyup(() => {
+            console.log("here");
+        });
 
         $('#nav-icon1').click(function () {
             $(this).toggleClass('open');
