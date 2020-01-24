@@ -2,55 +2,59 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <title>My Application</title>
-    <link rel="stylesheet" href="./style.css"/>
+    <link rel="stylesheet" href="./style.css" />
     <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">-->
 </head>
 
 <body>
-<div class="wrapper">
-    <div class="heading-container">
-        <h1>PopFlix</h1>
-        <div id="nav-icon1">
-            <span></span>
-            <span></span>
-            <span></span>
+    <div class="wrapper">
+        <div class="heading-container">
+            <h1>PopFlix</h1>
+            <div id="nav-icon1">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="main-body-container">
+            <ul class="movie-list">
+                <!--Generated Dynamically using JS-->
+            </ul>
+        </div>
+        <div class="footer-container">
+            Footer
         </div>
     </div>
-    <div class="main-body-container">
-        <ul class="movie-list">
-            <!--Generated Dynamically using JS-->
+
+    <nav class="menu-sidebar-container menu-close">
+        <ul class="menu-links">
+            <li class="menu-item">
+                <label for="menu-search" id="menu-search-label">Search</label>
+                <input type="text" id="menu-search">
+            </li>
+            <li class="menu-item">
+                <h2>Add Movie</h2>
+                <form class="add-movie-container">
+                    <label for="add-movie-title" class="add-movie-title">Movie Title:
+                        <input type="text" id="add-movie-title">
+                    </label>
+
+                    <label for="add-movie-rating" class="add-movie-rating">Movie Pops:
+                        <input type="number" min="1" max="5" value="3" id="add-movie-rating">
+                    </label>
+
+                    <button type="button" id="add-button">Add</button>
+                </form>
+            </li>
+            <li class="menu-item">
+                <h2>Edit Movie</h2>
+            </li>
         </ul>
-    </div>
-    <div class="footer-container">
-        Footer
-    </div>
-</div>
+    </nav>
 
-<nav class="menu-sidebar-container menu-close">
-    <ul class="menu-links">
-        <li class="menu-item">
-            <label for="menu-search" id="menu-search-label">Search</label>
-            <input type="text" id="menu-search">
-        </li>
-        <li class="menu-item">
-            <h2>Add Movie</h2>
-            <form class="add-movie-container">
-                <label for="add-movie-title">Movie Title:</label>
-                <input type="text" id="add-movie-title">
-                <label for="add-movie-rating">Movie Rating:</label>
-                <input type="number" id="add-movie-rating" min="1" max="5" value="3">
-                <button type="button" id="add-button">Add</button>
-            </form>
-        </li>
-        <li class="menu-item">
-            <h2>Edit Movie</h2>
-        </li>
-    </ul>
-</nav>
-
-<!--<div class="form-container" id="add-movie-form">
+    <!--<div class="form-container" id="add-movie-form">
     <form>
         <label for="add-movie-title">Movie Title:</label>
         <input type="text" id="add-movie-title">
@@ -83,7 +87,7 @@
 </div>-->
 
 
-<script src="./main.js"></script>
+    <script src="./main.js"></script>
 </body>
 
 </html>

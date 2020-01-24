@@ -1,5 +1,5 @@
 const $ = require('jquery');
-const {getImdbMovie, getPoster} = require('./imdb.js');
+const { getImdbMovie, getPoster } = require('./imdb.js');
 
 // VARIABLE DECLARATIONS
 let selectedMovie = {
@@ -51,14 +51,25 @@ const generateStars = (movieRating) => {
 const addMovie = () => {
     let addMovieTitleEl = $('#add-movie-title');
     if ($(addMovieTitleEl).val()) {
-        getImdbMovie($(addMovieTitleEl).val()).then((movie)=> {
+        getImdbMovie($(addMovieTitleEl).val()).then((movie) => {
             console.log(movie);
-            let movieObj = {
-                "title": movie.title.trim(),
-                "rating": $('#add-movie-rating').val(),
-                "imdb-id": movie.id,
-                "poster_url": movie.poster
-            };
+            let movieObj;
+            if (movie.id === "") {
+                movieObj = {
+                    "title": $(addMovieTitleEl).val().trim(),
+                    "rating": $('#add-movie-rating').val(),
+                    "imdb-id": "",
+                    "poster_url": './no-poster-available.jpg'
+                };
+            } else {
+                movieObj = {
+                    "title": movie.title.trim(),
+                    "rating": $('#add-movie-rating').val(),
+                    "imdb-id": movie.id,
+                    "poster_url": `${movie.poster || './no-poster-available.jpg'}`
+                };
+            }
+
             fetch('/api/movies', {
                 method: 'POST',
                 headers: {

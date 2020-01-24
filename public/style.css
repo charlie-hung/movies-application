@@ -56,20 +56,26 @@ html, body {
     position: absolute;
     top: 10.5vh;
     right: 5vw;
-    background-color: white;
-    border: .1em solid #111;
+    background-color: #BF0200;
+    /* border: .1em solid #B6BBB6; */
     border-radius: .5em;
-    box-shadow: 0 0 10px #111;
+    box-shadow: 0 0 10px #1C2023;
     display: flex;
     flex-direction: column;
     width: 400px;
     font-size: 1rem;
-    color: black;
-    z-index: 2;
+    font-family: 'Francois One', sans-serif;
+    color: #1C2023;
+}
+
+
+.menu-sidebar-container label, .menu-sidebar-container h2{
+    filter: drop-shadow(3px 3px 2px #000);
+    margin-right: .3rem;
 }
 
 .menu-close {
-    display: none;
+    /* display: none; */
 }
 
 .menu-links {
@@ -77,22 +83,60 @@ html, body {
     text-align: right;
 }
 .menu-item {
-    background-color: #eee;
-    color: #444;
+    background-color: #BF0200;
+    color: #fff;
     transition: .4s ease;
     padding: .4rem;
     border-radius: .3rem;
 }
+
+li.menu-item {
+    border-bottom: 1px #1C2023 solid;
+}
+
 .menu-item:hover {
-    background-color: #BF0200;
-    color: #111;
+    background-color: #1C2023;
+    color: #B6BBB6;
     cursor: pointer;
+    opacity: 1;
 }
 
 .add-movie-container {
     display: flex;
     flex-direction: column;
+    font-size: 1.2rem;
 }
+
+.add-movie-title, .add-movie-rating{
+    margin-top: .6rem;
+    display: flex;
+    align-self: flex-end;
+    margin-right: .3rem;
+
+}
+
+.add-movie-title input, .add-movie-rating input {
+    border-radius: .3rem;
+    font-size: 1rem;
+    margin-left: .5rem;
+    font-family: 'Francois One', sans-serif;
+}
+
+#add-button {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    margin-top: .6rem;
+    margin-right: .2rem;
+    width: 20%;
+    font-size: 1rem;
+    padding: .2rem;
+    border-radius: .3rem;
+    filter: drop-shadow(3px 3px 2px #000);
+
+}
+
+
 
 .movie-list {
     display: flex;
@@ -139,8 +183,6 @@ html, body {
 .movie-title {
     font-size: 1.4rem;
     font-family: 'Cormorant Garamond', serif;
-    /*text-wrap: normal;*/
-    /*width: 70%;*/
 }
 
 .movie-img-small {
