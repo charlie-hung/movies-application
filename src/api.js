@@ -33,9 +33,7 @@ const createMovieString = (moviesObj) => {
                         <p class="movie-title">${movie.title}</p>
                         <p class="movie-rating">${generateStars(movie.rating)}</p>
                     </div>
-<!--                    <div class="small-image-container">-->
-                        <img class="movie-img-small" src="${movie.poster_url}" alt="">
-<!--                    </div>-->
+                    <img class="movie-img-small" src="${movie.poster_url}" alt="">
                 </li>`
     });
     return htmlString;
@@ -89,8 +87,10 @@ const addMovie = () => {
 
 const editMovie = () => {
     let movieChanges = {
-        title: $('#edit-movie-title').val(),
-        rating: $('#edit-movie-rating').val()
+        "title": $('#edit-movie-title').val(),
+        "rating": $('#edit-movie-rating').val(),
+        "imdb-id": "",
+        "poster_url": './no-poster-available.jpg'
     };
     fetch(`/api/movies/${selectedMovie.id}`, {
         method: 'PUT',
@@ -122,18 +122,6 @@ const deleteMovie = () => {
     });
 };
 // SEARCH MOVIE FUNCTIONALITY //
-/*const searchMovies = () => {
-    let searchResults = [];
-    getMovies().then((movies) => {
-        if ($('#movie-search').val()) {
-            movies.forEach((movie) => {
-                if (movie.title.toLowerCase().includes($('#movie-search').val().toLowerCase())) searchResults.push(movie);
-            });
-        }
-        renderSearchResults(searchResults);
-    })
-};*/
-
 const searchMovies = () => {
     let searchResults = [];
     getMovies().then((movies) => {
@@ -150,21 +138,11 @@ const searchMovies = () => {
 const renderSearchResults = (results) => {
     $('.movie-list').html(createMovieString(results));
     activateMovieList();
-    // $('.search-result-item').click(function () {
-    //     selectedMovie.id = $(this).attr('movie-id');
-    //     $('#edit-movie-title').val($(this).html());
-    // });
 };
 
-/*const renderSearchResults = (results) => {
-    let htmlString = "";
-    results.forEach((result) => htmlString += `<li class="search-result-item" movie-id="${result.id}">${result.title}</li>`);
-    $('.search-results-list').html(htmlString);
-    $('.search-result-item').click(function () {
-        selectedMovie.id = $(this).attr('movie-id');
-        $('#edit-movie-title').val($(this).html());
-    });
-};*/
+const renderLoading = () => {
+    $('.movie-list').html(`<h1 class="loading animated flash">LOADING...</h1>`);
+};
 
 const activateMovieList = () => {
     $('.single-movie-container').click(function () {
@@ -202,5 +180,6 @@ module.exports = {
     deleteMovie,
     searchMovies,
     renderSearchResults,
-    toggleDisable
+    toggleDisable,
+    renderLoading
 };

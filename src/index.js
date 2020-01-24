@@ -1,10 +1,10 @@
 {
     const $ = require('jquery');
-    const {selectedMovie, getMovies, displayAllMovies, createMovieString, addMovie, editMovie, deleteMovie, searchMovies, renderSearchResults, toggleDisable} = require('./api.js');
+    const {selectedMovie, getMovies, displayAllMovies, createMovieString, addMovie, editMovie, deleteMovie, searchMovies, renderSearchResults, toggleDisable, renderLoading} = require('./api.js');
     const {getImdbMovie, getPoster} = require('./imdb.js')
 
     $(document).ready(() => {
-        $('.movie-list').html('Loading...');
+        renderLoading();
         //INITIALLY HIDES THE CONTAINERS
         $('.add-movie-container').slideToggle();
         $('.edit-movie-container').slideToggle();
@@ -12,6 +12,7 @@
         //EVENT LISTENERS
         $('#add-button').click((e) => {
             e.preventDefault();
+            renderLoading();
             addMovie();
         });
 
@@ -21,11 +22,13 @@
         });
 
         $('#edit-button').click(() => {
+            renderLoading();
             editMovie();
         });
 
 
         $('#delete-button').click(() => {
+            renderLoading();
             deleteMovie();
         });
 
@@ -34,6 +37,7 @@
         });
 
         $('#menu-search').keyup(() => {
+            renderLoading();
             searchMovies();
         });
 

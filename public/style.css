@@ -134,6 +134,11 @@ li.menu-item {
     font-family: 'Francois One', sans-serif;
 }
 
+.loading {
+    text-align: center;
+    color: white;
+}
+
 #menu-search {
     font-family: 'Francois One', sans-serif;
 }
