@@ -55,7 +55,7 @@ html, body {
 .menu-sidebar-container {
     position: absolute;
     top: 10.5vh;
-    right: 6.5vw;
+    right: 5vw;
     background-color: white;
     border: .1em solid #111;
     border-radius: .5em;
@@ -65,6 +65,7 @@ html, body {
     width: 400px;
     font-size: 1rem;
     color: black;
+    z-index: 2;
 }
 
 .menu-close {
