@@ -37,8 +37,10 @@
             searchMovies();
         })
 
+        $('#nav-icon1').click(function () {
+            $(this).toggleClass('open');
+        });
+
         getImdbMovie('rush hour 2');
-        // getPoster('121212nbhbgb');
-        // getPoster('rush hour 2');
     });
 }

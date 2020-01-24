@@ -10,7 +10,7 @@ const getPoster = (searchString) => {
 
 const getImdbMovie = (searchString) => {
   let searchQuery = searchString.split(' ').join('%2520');
-  console.log(searchQuery);
+  // console.log(searchQuery);
 
   return fetch(`https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/${searchQuery}`, {
     "method": "GET",

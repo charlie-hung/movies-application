@@ -41,6 +41,34 @@
       "imdb-id": "tt1467304",
       "poster_url": "https://m.media-amazon.com/images/M/MV5BMTY4Nzk3NzYxOF5BMl5BanBnXkFtZTcwODQwNjQzMw@@.jpg",
       "id": 7
+    },
+    {
+      "title": "Interstellar",
+      "rating": "3",
+      "imdb-id": "tt0816692",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@.jpg",
+      "id": 8
+    },
+    {
+      "title": "Apollo 11",
+      "rating": "3",
+      "imdb-id": "tt8760684",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMTYyMzEzNjI4M15BMl5BanBnXkFtZTgwODgxOTgyNzM@.jpg",
+      "id": 9
+    },
+    {
+      "title": "The Terminator",
+      "rating": "3",
+      "imdb-id": "tt0088247",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BYTViNzMxZjEtZGEwNy00MDNiLWIzNGQtZDY2MjQ1OWViZjFmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@.jpg",
+      "id": 10
+    },
+    {
+      "title": "Terminator 2: Judgment Day",
+      "rating": "3",
+      "imdb-id": "tt0103064",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMGU2NzRmZjUtOGUxYS00ZjdjLWEwZWItY2NlM2JhNjkxNTFmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@.jpg",
+      "id": 11
     }
   ]
 }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Francois+One|Josefin+Sans&display=swap');
+
 :root {
 
 }
@@ -14,7 +16,8 @@ html, body {
 
 .wrapper {
     display: grid;
-    grid-template: 10% 70% 10% / 5% 90% 5%;
+    background-color: #BF0200;
+    grid-template: 15% 70% 5% / 5% 90% 5%;
     grid-template-areas:
                     "header-area header-area header-area"
                     ". body-area ."
@@ -23,6 +26,15 @@ html, body {
 }
 
 .heading-container {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    margin-left: 5rem;
+    text-align: center;
+    font-family: 'Francois One', sans-serif;
+    font-size: 3rem;
+    filter: drop-shadow(3px 3px 2px #000);
     grid-area: header-area;
 }
 .main-body-container {
@@ -30,7 +42,7 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     height: 30rem;
-    background-color: burlywood;
+    background-color: #1C2023;
     overflow: scroll;
 }
 .footer-container {
@@ -48,17 +60,20 @@ html, body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 1rem 1rem 1rem 1rem;
+    margin: 1rem auto 1rem 1rem;
     width: 22rem;
     height: 10rem;
-    background-color: azure;
+    background-color: #1C2023;
+    color: #B6BBB6;
     border-radius: .4rem;
     text-align: left;
     transition: .4s ease;
+    border-bottom: 2px rgba(182, 187, 182, .5) solid;
+    border-right: 1px rgba(182, 187, 182, .5) solid;
 }
 .single-movie-container:hover {
-    background-color: green;
-    color: white;
+    background-color: rgba(255, 255, 255, .3);
+    color: #fff;
 }
 .small-details-container {
     display: flex;
@@ -74,6 +89,7 @@ html, body {
 }
 .movie-title {
     font-size: 1.4rem;
+    font-family: 'Cormorant Garamond', serif; 
     /*text-wrap: normal;*/
     /*width: 70%;*/
 }
@@ -89,4 +105,76 @@ html, body {
     color: gold;
     filter: drop-shadow(3px 3px 2px #000);
 }
+
+/* MENU ICON */
+        #nav-icon1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            position: relative;
+            margin: 30px 80px;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: .5s ease-in-out;
+            -moz-transition: .5s ease-in-out;
+            -o-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+            cursor: pointer;
+        }
+        
+        #nav-icon1 span{
+            display: block;
+            position: absolute;
+            height: 5px;
+            width: 100%;
+            background: #fff;
+            border-radius: 9px;
+            opacity: 1;
+            left: 0;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: .25s ease-in-out;
+            -moz-transition: .25s ease-in-out;
+            -o-transition: .25s ease-in-out;
+            transition: .25s ease-in-out;
+        }
+        
+        #nav-icon1 span:nth-child(1) {
+            top: 0px;
+        }
+        
+        #nav-icon1 span:nth-child(2) {
+            top: 13px;
+        }
+        
+        #nav-icon1 span:nth-child(3) {
+            top: 25px;
+        }
+        
+        #nav-icon1.open span:nth-child(1) {
+            top: 18px;
+            -webkit-transform: rotate(135deg);
+            -moz-transform: rotate(135deg);
+            -o-transform: rotate(135deg);
+            transform: rotate(135deg);
+        }
+        
+        #nav-icon1.open span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+        
+        #nav-icon1.open span:nth-child(3) {
+            top: 18px;
+            -webkit-transform: rotate(-135deg);
+            -moz-transform: rotate(-135deg);
+            -o-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+        }
 
