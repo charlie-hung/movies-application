@@ -16,6 +16,7 @@ const getMovies = () => {
 const displayAllMovies = () => {
     getMovies().then((movies) => {
         $('.movie-list').html(createMovieString(movies));
+        activateMovieList();
         Promise.resolve().then(response => "Success: " + response);
     }).catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.');
@@ -27,7 +28,7 @@ const displayAllMovies = () => {
 const createMovieString = (moviesObj) => {
     let htmlString = '';
     moviesObj.forEach((movie) => {
-        htmlString += `<li class="single-movie-container">
+        htmlString += `<li class="single-movie-container" movie-id="${movie.id}">
                     <div class="small-details-container">
                         <p class="movie-title">${movie.title}</p>
                         <p class="movie-rating">${generateStars(movie.rating)}</p>
@@ -79,6 +80,7 @@ const addMovie = () => {
             }).then((data) => {
                 getMovies().then((movies) => {
                     $('.movie-list').html(createMovieString(movies));
+                    activateMovieList();
                 });
             })
         });
@@ -90,7 +92,6 @@ const editMovie = () => {
         title: $('#edit-movie-title').val(),
         rating: $('#edit-movie-rating').val()
     };
-    console.log(movieChanges);
     fetch(`/api/movies/${selectedMovie.id}`, {
         method: 'PUT',
         headers: {
@@ -101,6 +102,7 @@ const editMovie = () => {
         console.log(data.json());
         getMovies().then((movies) => {
             $('.movie-list').html(createMovieString(movies));
+            activateMovieList();
         });
     });
 };
@@ -115,6 +117,7 @@ const deleteMovie = () => {
         console.log(data.json());
         getMovies().then((movies) => {
             $('.movie-list').html(createMovieString(movies));
+            activateMovieList();
         });
     });
 };
@@ -146,6 +149,7 @@ const searchMovies = () => {
 
 const renderSearchResults = (results) => {
     $('.movie-list').html(createMovieString(results));
+    activateMovieList();
     // $('.search-result-item').click(function () {
     //     selectedMovie.id = $(this).attr('movie-id');
     //     $('#edit-movie-title').val($(this).html());
@@ -161,6 +165,17 @@ const renderSearchResults = (results) => {
         $('#edit-movie-title').val($(this).html());
     });
 };*/
+
+const activateMovieList = () => {
+    $('.single-movie-container').click(function () {
+        let movieListEl = $('.movie-list');
+        for (let i = 0; i < $(movieListEl).children().length; i++) {
+            $(movieListEl).children(i).removeClass('active');
+        }
+        $(this).addClass('active');
+        selectedMovie.id = $(this).attr('movie-id');
+    });
+};
 
 const toggleDisable = () => {
     $('#add-button').attr('disabled', (index, attr) => {

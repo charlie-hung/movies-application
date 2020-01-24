@@ -71,39 +71,18 @@
       "id": 11
     },
     {
-      "title": "",
-      "rating": "3",
-      "imdb-id": "",
-      "poster_url": "",
-      "id": 12
-    },
-    {
-      "title": "Hun hebben",
-      "rating": "3",
-      "imdb-id": "tt0619854",
-      "poster_url": "",
-      "id": 13
-    },
-    {
-      "title": "Hun hebben",
-      "rating": "4",
-      "imdb-id": "tt0619854",
-      "poster_url": "./no-poster-available.jpg",
-      "id": 14
-    },
-    {
-      "title": "Rachel's Angels",
-      "rating": "4",
-      "imdb-id": "tt1116815",
-      "poster_url": "./no-poster-available.jpg",
-      "id": 15
-    },
-    {
       "title": "Get Out",
       "rating": "4",
       "imdb-id": "tt5052448",
       "poster_url": "https://m.media-amazon.com/images/M/MV5BMjUxMDQwNjcyNl5BMl5BanBnXkFtZTgwNzcwMzc0MTI@.jpg",
       "id": 16
+    },
+    {
+      "title": "The Lion King",
+      "rating": "4",
+      "imdb-id": "tt0110357",
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@.jpg",
+      "id": 17
     }
   ]
 }

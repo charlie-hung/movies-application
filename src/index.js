@@ -1,10 +1,13 @@
 {
     const $ = require('jquery');
-    const { selectedMovie, getMovies, displayAllMovies, createMovieString, addMovie, editMovie, deleteMovie, searchMovies, renderSearchResults, toggleDisable } = require('./api.js');
-    const { getImdbMovie, getPoster } = require('./imdb.js')
+    const {selectedMovie, getMovies, displayAllMovies, createMovieString, addMovie, editMovie, deleteMovie, searchMovies, renderSearchResults, toggleDisable} = require('./api.js');
+    const {getImdbMovie, getPoster} = require('./imdb.js')
 
     $(document).ready(() => {
         $('.movie-list').html('Loading...');
+        //INITIALLY HIDES THE CONTAINERS
+        $('.add-movie-container').slideToggle();
+        $('.edit-movie-container').slideToggle();
 
         //EVENT LISTENERS
         $('#add-button').click((e) => {
@@ -37,6 +40,13 @@
         $('#nav-icon1').click(function () {
             $(this).toggleClass('open');
             $('.menu-sidebar-container').slideToggle(100).toggleClass('menu-close');
+        });
+
+        $('.add-movie').click(() => {
+            $('.add-movie-container').slideToggle(100);
+        });
+        $('.edit-movie').click(() => {
+            $('.edit-movie-container').slideToggle(100);
         });
 
         // getImdbMovie('rush hour 2');
